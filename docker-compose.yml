@@ -50,7 +50,7 @@ services:
         DJANGO_CONFIGURATION: "production"
         WITH_TESTS: "no"
     environment:
-      DJANGO_MODWSGI_EXTRA_ARGS: ""
+      DJANGO_MODWSGI_EXTRA_ARGS: "--http2"
     volumes:
       - cvat_data:/home/django/data
       - cvat_keys:/home/django/keys

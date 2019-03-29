@@ -26,6 +26,7 @@ RUN apt-get update && \
         wget && \
     add-apt-repository ppa:mc3man/xerus-media -y && \
     add-apt-repository ppa:mc3man/gstffmpeg-keep -y && \
+    add-apt-repository ppa:ondrej/apache2 -y && \
     apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -yq \
         apache2 \
@@ -42,6 +43,7 @@ RUN apt-get update && \
         unrar \
         p7zip-full \
         vim && \
+    add-apt-repository --remove ppa:ondrej/apache2 -y && \
     add-apt-repository --remove ppa:mc3man/gstffmpeg-keep -y && \
     add-apt-repository --remove ppa:mc3man/xerus-media -y && \
     rm -rf /var/lib/apt/lists/*
